@@ -2568,7 +2568,7 @@ static int nvme_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 	alloc_size = nvme_pci_iod_alloc_size(dev, NVME_MAX_KB_SZ,
 						NVME_MAX_SEGS, true);
 	WARN_ON_ONCE(alloc_size > PAGE_SIZE);
-	dev_info(dev->ctrl.device, "alloc_size %ld\n, alloc_size);
+	dev_info(dev->ctrl.device, "alloc_size %ld\n", alloc_size);
 
 	dev->iod_mempool = mempool_create_node(1, mempool_kmalloc,
 						mempool_kfree,
